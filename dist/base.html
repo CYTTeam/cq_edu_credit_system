@@ -1,0 +1,76 @@
+<!doctype html>
+<html class="no-js"
+  lang="zhCN"
+  ng-app="cq_edu_credit_system"
+  ng-strict-di>
+
+<head>
+   <meta charset="utf-8">
+   <base href="/" />
+   <meta http-equiv="x-ua-compatible"
+     content="ie=edge">
+   <title>重庆市教育系统公共信用信息系统</title>
+   <meta name="description"
+     content="">
+   <meta name="viewport"
+     content="width=device-width, initial-scale=1">
+
+   <link rel="icon"
+     href="/favicon.png"
+     type="image/png" />
+   <link rel="apple-touch-icon"
+     href="/apple-touch-icon.png">
+</head>
+
+<body>
+   <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+   <header class="app-header">
+      <div class="row">
+         <div class="col-xs-2">
+            <h1 class="hidden">SCITE</h1>
+         </div>
+
+         <div class="col-xs-8">
+            <h1>掌上游天涯后台管理系统</h1>
+         </div>
+
+         <div class="col-xs-2">
+            <h1>
+               <a class="btn btn-success"
+                 ui-sref="admin-password-change">修改密码</a>
+               <a class="btn btn-success"
+                 ui-sref="logout">退出</a>
+            </h1>
+         </div>
+      </div>
+
+   </header>
+
+   <article class="app-content">
+      <aside class="col-sm-2 menu-bar"
+        ng-style="{display: auth && auth.accessToken ? '' : 'none'}">
+         <accordion close-others="true">
+            <accordion-group heading="展会指南管理">
+               <div ui-sref-active="active"><a class="menu-link"
+                    ui-sref="exhibitor-guide">展商信息</a></div>
+               <div ui-sref-active="active"><a class="menu-link"
+                    ui-sref="exhibition-list">展会活动</a></div>
+               <div ui-sref-active="active"><a class="menu-link"
+                    ui-sref="pavilion-dist">展区分布</a></div>
+            </accordion-group>
+         </accordion>
+      </aside>
+
+      <main class="col-sm-10 hero"
+        ui-view>
+
+      </main>
+   </article>
+   <script src="/vendor.bundle.js"></script>
+   <script src="/bundle.js"></script>
+</body>
+
+</html>
